@@ -76,3 +76,74 @@
         	System.out.println("Non-static Variable 2: " + demo.nonStaticVar2);
 	}
 }
+
+--------------------------------------day-3 28-09-2024--------------------------------------------------------------------
+/* 
+6.create a java application where we have one class it contains non static method m1() having no params and returns nothing , when we invoke this method under main method it has to display any user friendly message.
+
+*/
+
+class Sample{
+	
+    	public static void main(String[] args) {
+        	
+            	Sample obj = new Sample();
+		obj.m1();
+		//m2();
+		//obj.display("Joseph");
+
+    	}
+
+	void m1(){
+		System.out.println("Hello World");
+	}
+
+	/*non static methos like m4 having params long and returns true or false 
+	boolean m4(long a){
+		
+	}
+	static method like m3 having no params and returns decimal values
+	static double m3(){
+
+	}
+	
+	non static method like display having params string and returns nothing
+	void display(String str){
+		System.out.println("Hello "+str);
+	}
+
+	static void m2(){
+		System.out.println("Hello");
+	}
+	*/
+
+	
+}
+
+/* 
+7.create a java application where we have one class it contains static method display() having no params, returns nothing when we invoke this method it has to print any user friendly message invoke this in all possible ways
+
+*/
+
+class Sample{
+
+	
+	static void display(){
+		System.out.println("Hello ");
+	}
+    	public static void main(String[] args) {
+		
+		// invoke by directly
+        	display();
+		
+		// invoke by object
+		Sample obj = new Sample();
+		obj.display();
+		
+		// invoke by using class
+		Sample.display();
+            	
+    	}
+	
+}
+
