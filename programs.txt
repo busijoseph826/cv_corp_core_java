@@ -77,7 +77,7 @@
 	}
 }
 
---------------------------------------day-3 28-09-2024--------------------------------------------------------------------
+--------------------------------------day-2 28-09-2024--------------------------------------------------------------------
 /* 
 6.create a java application where we have one class it contains non static method m1() having no params and returns nothing , when we invoke this method under main method it has to display any user friendly message.
 
