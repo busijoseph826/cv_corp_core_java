@@ -1,0 +1,78 @@
+1.create a java application where we have one class by using this class we need to display any user friendly message
+    class Sample{
+        public static void main(String[]args){
+            System.out.println("Hello World");
+        }
+    }
+
+2.create a java application it contains 2 static variables then acces these variable under main method
+    class Sample{
+        static int a = 10;
+        static String str ="Java";
+        public static void main(String[]args){
+            System.out.println(a);
+            System.out.println(str);
+        }
+    }
+
+3.create ajava application where we have one class it contains 2 non static variables with values then acces these variables under main method
+    class Sample{
+        int a = 10;
+        str ="Java";
+        public static void main(String[]args){
+            Sample obj = new Sample();
+            System.out.println(obj.a);
+            System.out.println(obj.str);
+        }
+    }
+
+4.create a java application where we have one class it contains 2 static variables & 2 non-static variables & 2 local variables then print all these varibales values under main method
+    class Sample{
+        static int a2 = 10;
+        static char j = 's';
+        int a = 10;
+        str ="Java";
+        public static void main(String[]args){
+            Sample obj = new Sample();
+            int b2 = 9;
+            int b3 = 10;
+            System.out.println("non-static variables ");
+            System.out.println(obj.a);
+            System.out.println(obj.str);
+
+            System.out.println("static variables ");
+            System.out.println(a2);
+            System.out.println(j);
+
+            System.out.println("local variables ");
+            System.out.println(b2);
+            System.out.println(b3);
+        }
+    }
+
+5.create a java application where we have one class it contains 2 static variables & 2 non-static variables without values intialise these 2 variables under main theod then display the values.
+    class Sample{
+	static int staticVar1;
+	static int staticVar2;
+    	int nonStaticVar1;
+    	int nonStaticVar2;
+
+    	public static void main(String[] args) {
+        	
+        	staticVar1 = 10;
+        	staticVar2 = 20;
+
+        	// Create an instance to initialize non-static variables
+        	Sample demo = new Sample();
+
+        	// Initialize non-static variables
+        	demo.nonStaticVar1 = 30;
+        	demo.nonStaticVar2 = 40;
+
+        	// Display the values
+        	System.out.println("Static Variable 1: " + staticVar1);
+        	System.out.println("Static Variable 2: " + staticVar2);
+        	System.out.println("Non-static Variable 1: " + demo.nonStaticVar1);
+        	System.out.println("Non-static Variable 2: " + demo.nonStaticVar2);
+	}
+}
