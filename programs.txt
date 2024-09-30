@@ -147,3 +147,80 @@ class Sample{
 	
 }
 
+-------------------------------------------------Day-3 30-09-2024-----------------------------------------------------------
+
+/*
+8.create a java application where we have one class it contains non-static method having params String returnnnnns nothing then invoke this methos undeer main method
+*/
+
+class Sample {
+	
+	void nonStatic(String str){
+		System.out.println(str+" This is non static method with return nothing");
+	}
+	public static void main(String[] args){
+		Sample obj = new Sample();
+		obj.nonStatic("Joseph");
+	}
+}
+
+/*
+9.create a java application where we have one class it contains non-static methods having params like int, string, float, double, boolean returnnnnns nothing then invoke this methos undeer main method
+*/
+class Sample {
+	
+	void nonStatic(String str){
+		System.out.println(str+" This is non static method with return nothing");
+	}
+
+	void nonStatic(int n){
+		System.out.println("The Number is "+n);
+	}
+
+	void nonStatic(float f){
+		System.out.println("The floating point value  is "+f);
+	}
+	
+	void nonStatic(double d){
+		System.out.println("The double value is "+d);
+	}
+	
+	void nonStatic(boolean b){
+		if(b==true){
+			System.out.println("True");
+		}
+		else{
+			System.out.println("Flase");
+		}
+	}
+	
+	public static void main(String[] args){
+		Sample obj = new Sample();
+		obj.nonStatic("Joseph");
+		obj.nonStatic(6);
+		obj.nonStatic(12.4f);
+		obj.nonStatic(223.345668);
+		obj.nonStatic(false);
+	}
+}
+
+/*
+10.create a java application where we have one class it contains  static method m1() having params long, returns nothing & non-static method m2() having params float, returns nothing then invoke m1 and m2 under main method */
+
+class Sample {
+	
+	static void m1(long n){
+		System.out.println("The long value is "+n);
+	}
+
+	void m2(float f){
+		System.out.println("The floating point value  is "+f);
+	}
+	
+	public static void main(String[] args){
+		Sample obj = new Sample();
+		long n = 12345667098l;
+		m1(n);
+		obj.m2(8.06f);
+	}
+}
