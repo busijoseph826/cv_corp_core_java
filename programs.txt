@@ -224,3 +224,69 @@ class Sample {
 		obj.m2(8.06f);
 	}
 }
+
+
+-------------------------------------------------Day-4 01-10-2024-----------------------------------------------------------
+
+/*
+11.Create a java application where we have one class which contains nonstatic methods having params, and returns different data types value then invoke this method under main method
+*/
+
+class Sample {
+
+	String m1(float a){
+		
+		return "Joseph";
+	}
+	
+	int m2(String str){
+		return 8;
+	}
+	
+	double m3(int num){
+		return 12.3455667;
+	}
+	
+	float m4(char ch){
+		return 12.5f;
+	}
+	
+	char m5(int a){
+		return 'j';
+	}
+	
+	boolean m6(int b){
+		return true;
+	}
+	
+	public static void main(String[] args){
+		Sample obj = new Sample();
+		System.out.println(obj.m1(12.3f));
+		System.out.println(obj.m2("james"));
+		System.out.println(obj.m3(8));
+		System.out.println(obj.m4('h'));
+		System.out.println(obj.m5(12));
+		System.out.println(obj.m6(12));
+	}
+}
+
+/*
+12.Create a java application where we have one class which contains static method m1() having params int , return nothing */
+
+import java.util.Scanner;
+
+class Sample {
+
+	
+	static void m1(int num){
+		System.out.println("The Number is "+num);
+	}
+
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		m1(n);
+		sc.close();
+	}
+}
+
