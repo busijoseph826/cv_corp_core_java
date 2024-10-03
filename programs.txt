@@ -323,3 +323,51 @@ class Sample {
     }
 }
 
+
+--------------------------------------day-6 03-10-2024--------------------------------------------------------------------
+
+/* 14. Create a java application where we have one class it contains a static method m1() having parameters string it is going to return integer value and we have a non static method m2() having parameter as long it going to return float value we have another static method having parameter as int it is going to return nothing invoke all this methods under main method by providing dynamic inputs */
+
+import java.util.Scanner;
+
+class Sample {
+    static Scanner sc = new Scanner(System.in);
+
+    // Static method m1() having a string parameter and returning an integer
+    static int m1(String str) {
+        System.out.println("The string value is: " + str);
+        return 10;
+    }
+
+    // Non-static method m2() having a long parameter and returning a float
+    float m2(long n) {
+        System.out.println("Long value is: " + n);
+        return 12.4f;
+    }
+
+    // Another static method having an int parameter and returning nothing
+    static void m3(int n) {
+        System.out.println("The integer value is: " + n);
+    }
+
+    public static void main(String[] args) {
+        Sample obj = new Sample();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a long value: ");
+        long l1 = sc.nextLong();
+        System.out.println("Return value from m2(): " + obj.m2(l1));
+
+        System.out.print("Enter an integer value: ");
+        int n1 = sc.nextInt();
+        m3(n1);
+
+        System.out.print("Enter a string value: ");
+        sc.nextLine(); // Consume the newline character
+        String str = sc.nextLine();
+        int result = m1(str);
+        System.out.println("Return value from m1(): " + result);
+
+        sc.close();
+    }
+}
