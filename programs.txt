@@ -371,3 +371,69 @@ class Sample {
         sc.close();
     }
 }
+
+
+--------------------------------------day-7 04-10-2024--------------------------------------------------------------------
+
+/*1.Create a java application where we have one class it contains two static methods with params and return type then invoke these two methods under main method by providing dynamic inputs */
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	static String m1(int num){
+		System.out.println("The Number is "+num);
+		String str = sc.next();
+		return str;
+	}
+	static double m2(int num){
+		System.out.println("The Number is "+num);
+		double d = sc.nextDouble();
+		return d;
+	}
+
+	public static void main(String args[]){
+		System.out.println("Enter number ");
+		int num = sc.nextInt();
+		Sample obj = new Sample();
+		System.out.println(m1(num));
+		System.out.println("Enter number ");
+		int num1 = sc.nextInt();
+		System.out.println(m2(num1));
+		
+	}
+}
+
+/*2.Create a java application where we have one class it contains 3 static variables and 2 non-static varibales and one static method having param and return type then access all these variables under this method then invoke this method under main method by providing dynamic inputs */
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	
+	static String str = sc.next();
+	static int num = sc.nextInt();
+	static double d= sc.nextDouble();
+	String s1 = sc.next();
+	String s2 = sc.next();
+
+	static String m1(int num1){
+		System.out.println(num1);
+		System.out.println("Static variables are ");
+		System.out.println(str);
+		System.out.println(num);
+		System.out.println(d);
+		Sample obj = new Sample();
+		System.out.println("non-static varibales are ");
+		System.out.println(obj.s1);
+		System.out.println(obj.s2);
+		return str;
+	}
+		
+	
+	public static void main(String args[]){
+		System.out.println("Enter number");
+		int n = sc.nextInt();
+		System.out.println(m1(n));		
+	}
+}
