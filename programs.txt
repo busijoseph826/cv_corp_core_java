@@ -437,3 +437,67 @@ class Sample{
 		System.out.println(m1(n));		
 	}
 }
+
+--------------------------------------day-8 05-10-2024--------------------------------------------------------------------
+
+/* 1.Create a java application where we have one class it contains non-static method having no params and return nothing , static method m2(float) returns nothing then invoke m1 under m2 , m2 umder main method by provinding dynamic inputs    */
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	void m1(){
+		System.out.println("static method M1");
+	}
+	static void m2(float ft){
+		Sample obj = new Sample();
+		obj.m1();
+		System.out.println("Float value:"+ft);
+	}
+	public static void main(String args[]){
+		float ft = sc.nextFloat();
+		m2(ft);
+	}
+}
+/* 2.Create a java application where we have one class it contains static method m1() having no params return nothing , non-static mehtod m2(String) having params String returns nothing ,static method m3() having no params returns double value , non-static method m4(boolean) having params boolean returns short value then invoke m1 under m2, m2 under m3, m3 under m4 , m4 under main method by proving dynamic inputs   */
+
+import java.util.Scanner;
+
+class Sample {
+    static Scanner sc = new Scanner(System.in);
+
+    static void m1() {
+        System.out.println("Static method m1 called");
+    }
+
+    void m2(String str) {
+        System.out.println("Non-static method m2 called with parameter: " + str);
+        m1(); // Invoking static method m1 from non-static method m2
+    }
+
+    static double m3() {
+        System.out.println("Static method m3 called - Enter a double value:");
+        double d = sc.nextDouble();
+        System.out.println("Enter a String value:");
+        String str = sc.next();
+        Sample obj = new Sample(); // Create an instance for invoking non-static methods
+        obj.m2(str); // Invoking non-static method m2 from static method m3
+        return d;
+    }
+
+    short m4(boolean b) {
+        System.out.println("Non-static method m4 called with parameter: " + b);
+        System.out.println(m3()); // Invoking static method m3 from non-static method m4
+        System.out.println("Enter a short value:");
+        short shortValue = sc.nextShort();
+        return shortValue;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Enter a boolean value:");
+        boolean b = sc.nextBoolean();
+        Sample obj = new Sample(); // Creating an instance to invoke non-static method m4
+        System.out.println("Return value from m4: " + obj.m4(b));
+        sc.close(); // Closing scanner to prevent resource leakage
+    }
+}
