@@ -504,7 +504,7 @@ class Sample {
 
 --------------------------------------day-9 07-10-2024--------------------------------------------------------------------
 
-/* 2.Create a java application where we have one class it contains non-static method m1() having no params and returns nothing, static method m2() having no params return nothing , non-static method m3(float) having param float returns nothing, static method m4(long) having param long returns nothing, non-static method m5() having no param returns string value, static method m6() having no param returns double value, non static method m7() having params int return char, static method m8() having params boolean return string value , then invoke m1 under m2 and so on.......    */
+/* 1.Create a java application where we have one class it contains non-static method m1() having no params and returns nothing, static method m2() having no params return nothing , non-static method m3(float) having param float returns nothing, static method m4(long) having param long returns nothing, non-static method m5() having no param returns string value, static method m6() having no param returns double value, non static method m7() having params int return char, static method m8() having params boolean return string value , then invoke m1 under m2 and so on.......    */
 
 import java.util.Scanner;
 
@@ -564,4 +564,29 @@ class Sample{
 		boolean b = sc.nextBoolean();
 		System.out.println(m8(b));
 	}
+}
+
+
+/* 2.create a java application where we have one class which contains static method with parameter and return type then invoke this method under main method by providing dynamic inputs without using import*/
+
+class Sample {
+    // Static method with parameters and return type
+    static int addNumbers(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        // Using dynamic input without importing classes
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        // Invoking the static method with dynamic inputs
+        int result = addNumbers(num1, num2);
+        System.out.println("The sum is: " + result);
+    }
 }
