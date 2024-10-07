@@ -501,3 +501,67 @@ class Sample {
         sc.close(); // Closing scanner to prevent resource leakage
     }
 }
+
+--------------------------------------day-9 07-10-2024--------------------------------------------------------------------
+
+/* 2.Create a java application where we have one class it contains non-static method m1() having no params and returns nothing, static method m2() having no params return nothing , non-static method m3(float) having param float returns nothing, static method m4(long) having param long returns nothing, non-static method m5() having no param returns string value, static method m6() having no param returns double value, non static method m7() having params int return char, static method m8() having params boolean return string value , then invoke m1 under m2 and so on.......    */
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	static Sample obj = new Sample();
+	void m1(){
+		System.out.println("M1() method");
+	}
+	static void m2(){
+		obj.m1();
+		System.out.println("M2() method");
+	}
+	void m3(float f){
+		m2();
+		System.out.println("M3() method "+f);
+	}
+	static void m4(long ln){
+		System.out.println("m4() in");
+		float f = sc.nextFloat();
+		obj.m3(f);
+		System.out.println("M4() method "+ln);
+	}
+	String m5(){
+		System.out.println("m5() in");
+		long ln = sc.nextLong();
+		obj.m4(ln);
+		String str = sc.next();
+		System.out.println("m5() out");
+		return str;
+	}
+	static double m6(){
+		System.out.println("m6() in");
+		System.out.println(obj.m5());
+		double d = sc.nextDouble();
+		System.out.println("m6() out");
+		return d;
+	}
+	char m7(int n){
+		System.out.println("m7() in");
+		System.out.println(m6());
+		char ch = sc.next().charAt(0);
+		System.out.println(n);
+		System.out.println("m7() out");
+		return ch;
+	}
+	static String m8(boolean b){
+		System.out.println("m8() in");
+		int n = sc.nextInt();
+		System.out.println(obj.m7(n));
+		System.out.println(b);
+		String str = sc.next();
+		System.out.println("m8() out");
+		return str;
+	}
+	public static void main(String [] args){
+		boolean b = sc.nextBoolean();
+		System.out.println(m8(b));
+	}
+}
