@@ -590,3 +590,54 @@ class Sample {
         System.out.println("The sum is: " + result);
     }
 }
+
+
+--------------------------------------day-10 08-10-2024--------------------------------------------------------------------
+
+/* 1.create a java application where we have one class which contains non-static method m1(float & double) having params like float & double, return String value then invoke this method under main method */
+import java.util.Scanner;
+class Sample{
+	static Scanner sc= new Scanner(System.in);
+	String m1(float ft, double b){
+		System.out.println(ft+" "+b);
+		String str = sc.next();
+		return str;
+	}
+	public static void main(String []args){
+		Sample obj = new Sample();
+		float fr = sc.nextFloat();
+		double b = sc.nextDouble();
+		System.out.println(obj.m1(fr,b));
+	}
+}
+
+/* 2.create a java application where we have one class which contains static method m1(String, float,boolean) having params like String, float,boolean return long value, static method m2(char,int,double)having params like char,int,double and returns float value  then invoke m1 under m2 , m2 under main by providing dynamic inputs*/
+import java.util.Scanner;
+class Sample{
+	static Scanner sc= new Scanner(System.in);
+	static long m1(String s, float ft, boolean b){
+		System.out.println(s+" "+ft+" "+b);
+		return sc.nextLong();
+	}
+	static float m2(char ch, int n, double d){
+		System.out.println(ch+" "+n+" "+d);
+		System.out.println(m1(sc.next(),sc.nextFloat(),sc.nextBoolean()));
+		return sc.nextFloat();
+	}
+	public static void main(String []args){					
+		System.out.println(m2(sc.next().charAt(0),sc.nextInt(),sc.nextDouble()));
+	}
+}
+
+/*3.create a java application where we have one class which contains non static method m1 having parameter float and returns string value then invoke this method under main method without storing the object and by providing dynamic inputs*/
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	String m1(float ft){
+		System.out.println(ft);
+		return sc.next();
+	}
+	public static void main(String []args){
+		System.out.println(new Sample().m1(sc.nextFloat()));
+	}
+}
