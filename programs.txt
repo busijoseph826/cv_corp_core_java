@@ -641,3 +641,72 @@ class Sample{
 		System.out.println(new Sample().m1(sc.nextFloat()));
 	}
 }
+
+
+--------------------------------------day-11 16-10-2024--------------------------------------------------------------------
+/*1.create a java application where we have one class like Employee which contains properties like id,name,salary and designation provide three employee details when displays each employee details by using a method like display which contains no parameter and returns nothing then invoke this method under main method by providing dynamically inputs*/
+
+import java.util.Scanner;
+class Sample
+{
+	static Scanner sc=new Scanner(System.in);
+	int id=sc.nextInt();
+	String name=sc.next();
+	float salary=sc.nextFloat();
+	String designation=sc.next();
+	void display()
+	{
+		System.out.println(id);	
+		System.out.println(name);
+		System.out.println(salary);
+		System.out.println(designation);
+	}
+	public static void main(String[] args)
+	{
+		Sample e1=new Sample();
+		e1.display();
+		Sample e2=new Sample();
+		e2.display();
+		Sample e3=new Sample();
+		e3.display();
+	}
+}
+
+/*1.create a java application where we have one class like which contains  non-static method m1() having params and return type, static method m2()  having params and return type then invoke these 2 methods under main method by providing dynamic inputs and we are not allowed to create object directly */
+
+import java.util.Scanner;
+
+class Sample {
+
+    static Scanner sc = new Scanner(System.in);
+
+    // Non-static method m1() with parameters and return type
+    String m1(int n) {
+        System.out.println("m1 called with: " + n);
+        return sc.next();  // Taking dynamic input
+    }
+
+    // Static method m2() with parameters and return type
+    static int m2(String str) {
+        System.out.println("m2 called with: " + str);
+        return sc.nextInt();  // Taking dynamic input
+    }
+
+    // Static method to return an instance of Sample (Factory method)
+    public static Sample createSample() {
+        return new Sample();  // Indirect object creation
+    }
+
+    public static void main(String[] args) {
+        // Create an instance using the factory method
+        Sample sampleInstance = Sample.createSample();
+
+        // Call non-static method m1() using the created instance
+        System.out.println("Result of m1: " + sampleInstance.m1(sc.nextInt()));
+
+        // Call static method m2() directly using class name
+        System.out.println("Result of m2: " + Sample.m2(sc.next()));
+    }
+}
+
+
