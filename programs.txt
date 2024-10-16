@@ -672,7 +672,7 @@ class Sample
 	}
 }
 
-/*1.create a java application where we have one class like which contains  non-static method m1() having params and return type, static method m2()  having params and return type then invoke these 2 methods under main method by providing dynamic inputs and we are not allowed to create object directly */
+/*2.create a java application where we have one class like which contains  non-static method m1() having params and return type, static method m2()  having params and return type then invoke these 2 methods under main method by providing dynamic inputs and we are not allowed to create object directly */
 
 import java.util.Scanner;
 
@@ -709,4 +709,34 @@ class Sample {
     }
 }
 
+/* 3.Write a Java program that demonstrates a class `Sample` with the following functionality:
+
+1. The class has two methods: `add(int a, int b)` which returns the sum of two integers, and `sub(int a, int b)` which returns the difference between two integers.
+2. The class also contains a method `mul()` which:
+   - Takes four integer inputs from the user using `Scanner`.
+   - Uses the first two inputs for addition (`add`) and the next two for subtraction (`sub`).
+   - Multiplies the results of the `add` and `sub` methods and prints the product.
+
+Write the program such that it executes the `mul()` method inside the `main()` function. */
+
+
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	int add(int a,int b){
+		return (a+b);
+	}
+	int sub(int a,int b){
+		return (a-b);
+	}
+	void mul(){
+		int a = add(sc.nextInt(),sc.nextInt());
+		int b = sub(sc.nextInt(),sc.nextInt());
+		System.out.print(a*b);
+	}
+	public static void main(String []args){
+		Sample obj = new Sample();
+		obj.mul();
+	}
+}
 
