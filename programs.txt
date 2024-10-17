@@ -641,9 +641,27 @@ class Sample{
 		System.out.println(new Sample().m1(sc.nextFloat()));
 	}
 }
+--------------------------------------day-11 15-10-2024--------------------------------------------------------------------
+//create a java application where we have one class which contains non static method m1 having parameter and return type , static method m2 having parameter and return type then invoke these two methods under main method by providing dynamic inputs and we are not allowed to create object directly
 
-
---------------------------------------day-11 16-10-2024--------------------------------------------------------------------
+import java.util.*;
+class d25{
+	static Scanner sc=new Scanner(System.in);
+	int m1(float a){
+		System.out.println(a);
+		int b=sc.nextInt();
+		return b;
+	}
+	static d25 m2(String c){
+		System.out.println(c);
+		return new d25();
+	}
+	public static void main(String args[]){
+		d25 a1=m2(sc.next());
+		System.out.print(a1.m1(sc.nextFloat()));
+	}
+}
+--------------------------------------day-12 16-10-2024--------------------------------------------------------------------
 /*1.create a java application where we have one class like Employee which contains properties like id,name,salary and designation provide three employee details when displays each employee details by using a method like display which contains no parameter and returns nothing then invoke this method under main method by providing dynamically inputs*/
 
 import java.util.Scanner;
