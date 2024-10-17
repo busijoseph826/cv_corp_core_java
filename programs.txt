@@ -642,23 +642,27 @@ class Sample{
 	}
 }
 --------------------------------------day-11 15-10-2024--------------------------------------------------------------------
-//create a java application where we have one class which contains non static method m1 having parameter and return type , static method m2 having parameter and return type then invoke these two methods under main method by providing dynamic inputs and we are not allowed to create object directly
+/*create a java application where we have one class which contains static method m1() having parameter float, returns string value static method m2() having parameter string returns Boolean value then invoke this two methods under main method by providing dynamic inputs ang whatever the value we are returning the m1() method has to be send as parameter for m2() method */
 
-import java.util.*;
-class d25{
+import java.util.Scanner;
+class d27
+{
+	
 	static Scanner sc=new Scanner(System.in);
-	int m1(float a){
+	static String m1(float a)
+	{
 		System.out.println(a);
-		int b=sc.nextInt();
-		return b;
+		return sc.next();
 	}
-	static d25 m2(String c){
-		System.out.println(c);
-		return new d25();
+	static boolean m2(String s)
+	{
+		System.out.println(s);
+		return sc.nextBoolean();
 	}
-	public static void main(String args[]){
-		d25 a1=m2(sc.next());
-		System.out.print(a1.m1(sc.nextFloat()));
+	public static void main(String[] args)
+	{
+		String b=m1(sc.nextFloat());
+		System.out.print(m2(b));
 	}
 }
 --------------------------------------day-12 16-10-2024--------------------------------------------------------------------
