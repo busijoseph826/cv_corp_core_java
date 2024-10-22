@@ -109,3 +109,121 @@ class Sample{
 		
 	}
 }
+
+
+//      -------------------------------------------------------------------------22-10-2024----------------------------------------------------------------------------------
+
+
+/* 4. create a java application where we have one class which contains default constructor single parameterized constructor double parameterized constructor then invoke default under single parameterized constrictor single under double parameterized constructor double under main method by providing dynamically */  
+                                                                                                     
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+
+	Sample(){
+		System.out.println("Default constructor");
+	}
+
+	Sample(String str){
+		Sample obj1 = new Sample();
+		System.out.print(str);
+	}
+	Sample(String str, int n){
+		Sample obj2 = new Sample(sc.next());
+		System.out.println(str +" "+ n);
+	}
+
+	public static void main(String [] args)
+	{
+		Sample obj3 = new Sample(sc.next(),sc.nextInt());
+		
+	}
+}
+
+/* 5. create a java application where we have one class which contains two instance variables without values provide user definied values for this instance varibles by uisng double parameterized constructor then display the updated value then invoke this contructor under main methos by providing dynamic inputs */  
+                                                                                                     
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	String str;
+	int n;
+	Sample(String str1, int n1){
+		System.out.println("Intial values: "+ str+ " "+n);
+		System.out.println("updated values");
+		System.out.print(str1+" "+ n1);
+	}
+	public static void main(String [] args)
+	{	
+		new Sample(sc.next(),sc.nextInt());
+		
+	}
+}
+
+/* 6. create a java application where we have one class which contains single parmeterised constructor , non static method with param and return type then these two under main method by providing dynamic inputs  */  
+
+                                                                                                     
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	String m1(int n){
+		System.out.println(n);
+		return sc.next();
+	}
+	
+	Sample(float ft){
+		System.out.println(ft);
+	}
+	public static void main(String [] args)
+	{	
+		Sample obj = new Sample(sc.nextFloat());
+		System.out.println(obj.m1(sc.nextInt()));		
+	}
+}
+
+/* 7. create a java application where we have one class which contains two static variables , two non-static variables, static method with params and return type , default constructor , single parameterized constructor ,double param constructor , non-static method with param and return type then invoke all these under main method by providing dynamic inputs */  
+
+                                                                                                     
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	static String str= sc.next();
+	static int n=sc.nextInt();
+	float ft = sc.nextFloat();
+	double d = sc.nextDouble();
+	
+	static String m1(int n){
+		System.out.println("static method");
+		System.out.println(n);
+		return sc.next();
+	}
+
+	Sample(){
+		System.out.println("Default constructor");
+	}
+	
+	Sample(char ch){
+		System.out.println("Single param constructor");
+		System.out.println(ch);
+	}
+	Sample(boolean b, String str1){
+		System.out.println("Double param constructor");
+		System.out.println(b+" "+str1);
+	}
+	
+	int m2(String str2){
+		System.out.println("non-static method");
+		System.out.println(str2);
+		return sc.nextInt();
+	}
+	public static void main(String [] args)
+	{	
+		System.out.print("static variables : "+n+" "+ str);
+		System.out.println(m1(sc.nextInt()));
+		new Sample();
+		new Sample(sc.next().charAt(0));
+		Sample obj = new Sample(sc.nextBoolean(),sc.next());
+		System.out.println("non-static variables "+obj.ft+" "+obj.d);  
+		System.out.println(obj.m2(sc.next()));
+		
+	}
+}
