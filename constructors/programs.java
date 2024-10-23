@@ -227,3 +227,66 @@ class Sample{
 		
 	}
 }
+
+
+//      -------------------------------------------------------------------------23-10-2024----------------------------------------------------------------------------------
+
+/* 8. create a java application where we have one class which contains two static methods with params and return type and we have parameterized constructor then invoke all these properties under main method in a single statement by providing dynanic inputs
+
+  */  
+
+                                                                                                     
+import java.util.Scanner;
+
+class Sample {
+    static Scanner sc = new Scanner(System.in);
+
+    static int m1(String str) {
+        System.out.println(str);
+        return sc.nextInt();
+    }
+
+    static String m2(int num) {
+        System.out.println(num);
+        return sc.next();
+    }
+
+    Sample(String str1) {
+        System.out.println(str1);
+    }
+
+    public static void main(String[] args) {
+        Sample obj = new Sample(m2(m1(sc.next())));
+    }
+}
+
+/* 9. create a java application where we have one class which contains two static methods with params and return type and we have parameterized constructor then invoke all these properties under main method in a single statement by providing dynanic inputs
+
+  */  
+
+                                                                                                     
+import java.util.Scanner;
+
+class Sample {
+    static Scanner sc = new Scanner(System.in);
+
+    static int m1(String str) {
+        System.out.println(str);
+        return sc.nextInt();
+    }
+
+    static String m2(int num) {
+        System.out.println(num);
+        return sc.next();
+    }
+
+    Sample(int a, String b) {
+        System.out.println(a+" "+b);
+    }
+
+    public static void main(String[] args) {
+        Sample obj = new Sample(m1(sc.next()),m2(sc.nextInt()));
+    }
+}
+
+
