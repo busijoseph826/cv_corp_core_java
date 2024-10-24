@@ -289,4 +289,46 @@ class Sample {
     }
 }
 
+//      -------------------------------------------------------------------------24-10-2024----------------------------------------------------------------------------------
+// 3.Copy constructor
+//A Constructor contains object as a parameter, the main purpose  of this constructor is to copy the content from one constructor into another constructor
+	
+
+/* 10. create a java application where we have one class which contains object parameterzed constructor then invoke this constructor under main method.
+  */  
+                                                                                               
+import java.util.Scanner;
+class Sample{
+	Sample(){
+		System.out.println("default constructor");
+	}
+	Sample(Sample obj){
+		//System.out.print("copy constructor");
+	}
+	public static void main(String [] args){
+		Sample obj = new Sample(new Sample());
+	}
+}
+
+
+
+/* 11. create a java application where we have one class which contains two instance variables with out values provide user defined values by using double param constructor , we have an object param constructor when we invoke instance variables by using object of object param constructor then we need to get same user defined values which we provide at by using double param constructor then invoke these two constructors under main method by providing dynamic inputs
+  */  
+                                                                                                     
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	int a;
+	int b;
+	Sample(int c, int d){
+		this.a = c;
+		this.b = d;
+	}
+	Sample(Sample obj){
+		System.out.print(obj.a+" "+obj.b);
+	}
+	public static void main(String [] args){
+		new Sample(new Sample(sc.nextInt(),sc.nextInt()));
+	}
+}
 
