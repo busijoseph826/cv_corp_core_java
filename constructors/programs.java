@@ -332,3 +332,82 @@ class Sample{
 	}
 }
 
+/*this key word
+this keyword:
+ 1.It is a predefined keyword also known as current class object.
+ 2.Whenever we have both instance variable and local variable both are same during execution point of time JVM will get ambiguity to differtiate those variables at this point of time JVM will gives default priority for local variables & if we want to give priority to access instance variables we can use this keyword or by creating manual object for respective class
+ 3.we can use this keyword at three levels
+
+  -->At Variable level
+  -->Method level
+  -->Constructor level */
+
+
+/* 1.Create a java application where we need to satisy this keyword at variable.*/
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	int a = sc.nextInt();
+	void m1(float a){
+		System.out.print(this.a);
+	}
+	public static void main(String[] args){
+		new Sample().m1(sc.nextFloat());
+	}
+}
+
+/* 2.Create a java application where we have one class which contains non-static method void m1(float),non-static method long m1(String),non-static method boolean m1(double) then invoke 1st m1 under 2nd m2, 2nd m1 under 3rd m1 nad 3rd m1 under main method by providing dynamic inputs by using this keyword*/
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	void m1(float a){
+		System.out.println(a);
+	}
+	
+	long m1(String str){
+		this.m1(sc.nextFloat());
+		System.out.println(str);
+		return sc.nextLong();
+	}
+	double m1(boolean d){
+		System.out.println(this.m1(sc.next()));
+		System.out.println(d);
+		return sc.nextDouble();
+	}
+	
+
+	public static void main(String[] args){
+		System.out.println(new Sample().m1(sc.nextBoolean()));
+	}
+}
+
+/* 3.Create a java application where we have one class which contains Sample(), Sample(param), Sample(param,pram),Sample(param,pram,param) then invoke default under single, single udner double, double under triple , triple under main by providing dymanic inputs and by using this keyword.*/
+
+import java.util.Scanner;
+
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	Sample(){
+		System.out.println("Default constructor");
+	}
+	Sample(int a){
+		this();
+		System.out.println(a);
+	}
+	Sample(int a, int b){
+		this(sc.nextInt());
+		System.out.println(a+" "+b);
+	}
+	Sample(int a, int b,int c){
+		this(sc.nextInt(),sc.nextInt());
+		System.out.println(a+" "+b+" "+c);	
+	}
+	public static void main(String[] args){
+		new Sample(sc.nextInt(),sc.nextInt(),sc.nextInt());
+	}
+}
+
