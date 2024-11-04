@@ -411,3 +411,39 @@ class Sample{
 	}
 }
 
+
+
+//      -------------------------------------------------------------------------04-11-2024----------------------------------------------------------------------------------
+
+// 1.create a java application where we need to satisfied this at all level
+
+
+import java.util.Scaneer;
+class Sample10
+{
+  static Scanner sc=new Scanner(System.in);
+  Sample10()
+  {
+	System.out.println("Default");
+  }
+  Sample10(int a)
+  {
+	this();
+	System.out.println(a);
+  }
+  Sample10( double a, long b)
+  {
+	this(sc.nextInt());
+	System.out.println(a+ " "+b);
+  }
+  Sample10(int a,float b,boolean c)
+  {
+	this(sc.nextDouble(),sc.nextLong());
+	System.out.println(a+ " "+b+" "+c);
+   }
+public static void main(String[] args)
+{
+	new Sample10(sc.nextInt(),sc.nextFloat(),sc.nextBoolean());
+}
+} 
+
