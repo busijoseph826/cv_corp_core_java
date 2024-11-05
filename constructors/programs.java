@@ -447,3 +447,32 @@ public static void main(String[] args)
 }
 } 
 
+   //   -------------------------------------------------------------------------05-11-2024----------------------------------------------------------------------------------
+
+/* 1. create a java application we satify "this" keyword at varible level, method level, constructor level*/
+
+import java.util.Scanner;
+class Sample{
+	static Scanner sc = new Scanner(System.in);
+	float a = sc.nextInt();
+	void m1(int a){
+		System.out.println(a);
+		System.out.println(this.a);
+	}
+	boolean m1(String a){
+		System.out.println(a);
+		this.m1(sc.nextInt());
+		return sc.nextBoolean();
+	}
+	Sample(String a){
+		System.out.println(a);
+		System.out.println(this.m1(sc.next()));
+	}
+	Sample(double a){
+		this(sc.next());
+		System.out.println(a);
+	}
+	public static void main(String[]args){
+		new Sample(sc.nextDouble());
+	}
+}
