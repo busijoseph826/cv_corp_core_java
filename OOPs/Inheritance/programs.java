@@ -46,4 +46,30 @@ class Employee1 extends Employee{
 	}
 }
 
+/*2.create a java application where we have software company it will provide employee details like emp_id, emp_desigantin, salary, location to one employee then employee has to access these prperties and need to print these values with respcet to one method then invoke that method under main method by providing dynamic inputs.*/
+
+import java.util.Scanner;
+class Software{
+	static Scanner sc = new Scanner(System.in);
+	static int emp_id = sc.nextInt();
+	static String designation  = sc.next();
+	static double salary = sc.nextDouble();
+	static String location = sc.next();
+}
+class Employee extends Software{
+	void display(){
+		System.out.println("Emp id : "+emp_id);
+		System.out.println("Emp Designation : "+designation);
+		System.out.println("Emp Salary : "+salary);
+		System.out.println("Emp Location : "+location);
+	}
+
+	public static void main(String[]args){
+		new Employee().display();
+	}
+}
+
+
+
+
 
