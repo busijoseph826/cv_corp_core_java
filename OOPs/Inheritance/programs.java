@@ -234,3 +234,176 @@ public class Students{
 }
 
 
+//------------------------------------------------------------Hierarchical Inheritance Example-----------------------------------------------
+
+
+//When two or more classes inherits a single class, it is known as hierarchical inheritance. In the example given below, Dog and Cat classes inherits the Animal class, so there is hierarchical inheritance.
+
+class A {
+    public void displayA() {
+        System.out.println("Class A: Base class");
+    }
+}
+
+class B extends A {
+    public void displayB() {
+        System.out.println("Class B: Derived from A (Single-level Inheritance)");
+    }
+}
+
+class C extends A {
+    public void displayC() {
+        System.out.println("Class C: Another derived class from A (Hierarchical Inheritance)");
+    }
+}
+
+class D extends B {
+    public void displayD() {
+        System.out.println("Class D: Derived from B (Multi-level Inheritance)");
+    }
+}
+
+class E extends C {
+    public void displayE() {
+        System.out.println("Class E: Derived from C (Hierarchical with Single-level)");
+    }
+}
+class F extends C {
+    public void displayE() {
+        System.out.println("Class E: Derived from C (Hierarchical with double-level)");
+    }
+}
+
+
+public class HybridInheritance {
+    public static void main(String[] args) {
+        D objD = new D();
+        objD.displayA(); // From class A
+        objD.displayB(); // From class B
+        objD.displayD(); // From class D
+
+        System.out.println();
+
+        E objE = new E();
+        objE.displayA(); // From class A
+        objE.displayC(); // From class C
+        objE.displayE(); // From class E
+    }
+}
+
+//--------------------------------------------Super Keyword----------------------------------------------------------
+/*1.create a java application where we need to sasify super keyword at variable level by providing dynamic inputs*/
+
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	int a = sc.nextInt();
+}
+class B extends A{
+	float a = sc.nextFloat();
+	void m1(){
+		System.out.println(a);
+		System.out.println(super.a);
+	}
+	public static void main(String[]args){
+		new B().m1();
+	}
+}
+
+
+
+/* 2.create a java application where we have one class which contains non-static method m1(String) and returns integer value then inherit this class into another class which contains again method m1() with same param and return type then inherit this class into another class which contains again method m1 having same param and return type then invoke 1st m1 method under 2nd m1 method and 2nd m1 method under 3rd  m1 method , 3rd m1 under main method by using super keyword andproviding dynamin inputs */
+
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	int m1(String str){
+		System.out.println(str);
+		return sc.nextInt();
+	}
+}
+class B extends A{
+	int m1(String str){
+		System.out.println(str);
+		System.out.println(super.m1(sc.next()));
+		return sc.nextInt();
+	}
+}
+class C extends B{
+	int m1(String str){
+		System.out.println(str);
+		System.out.println(super.m1(sc.next()));
+		return sc.nextInt();
+	}
+	public static void main(String[]args){
+		System.out.println(new C().m1(sc.next()));
+	}
+
+}
+
+/* 3.create a java application where we have one class which containd default constructor then inherit this class into another class which contains parametrized constructor then inheri this class into another class whc=ich contains double param constructor then inherit this class into another class which contains another class which containd default constructor then inherit this class into another class which conatins triple parma constructor then invoke constructor with in a constructor by using super keyword and last constircupr under main method by providing dynamic inputs*/
+
+
+import java.util.Scanner;
+
+// Base class with default constructor
+class ClassA {
+    public ClassA() {
+        System.out.println("ClassA: Default Constructor");
+    }
+}
+
+// ClassB inherits ClassA and has a parameterized constructor
+class ClassB extends ClassA {
+    public ClassB(String param) {
+        super();  // Invoking ClassA's default constructor
+        System.out.println("ClassB: Parameterized Constructor with param = " + param);
+    }
+}
+
+// ClassC inherits ClassB and has a double-parameter constructor
+class ClassC extends ClassB {
+    public ClassC(String param1, int param2) {
+        super(param1);  // Invoking ClassB's parameterized constructor
+        System.out.println("ClassC: Double-Parameter Constructor with param1 = " + param1 + ", param2 = " + param2);
+    }
+}
+
+// ClassD inherits ClassC and has a default constructor
+class ClassD extends ClassC {
+    public ClassD() {
+        super("Default", 0);  // Invoking ClassC's double-parameter constructor
+        System.out.println("ClassD: Default Constructor");
+    }
+}
+
+// ClassE inherits ClassD and has a triple-parameter constructor
+class ClassE extends ClassD {
+    public ClassE(String param1, int param2, double param3) {
+        super();  // Invoking ClassD's default constructor
+        System.out.println("ClassE: Triple-Parameter Constructor with param1 = " + param1 + ", param2 = " + param2 + ", param3 = " + param3);
+    }
+}
+
+public class ConstructorChainingExample {
+    public static void main(String[] args) {
+        // Taking dynamic inputs
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string parameter: ");
+        String param1 = scanner.nextLine();
+        
+        System.out.print("Enter an integer parameter: ");
+        int param2 = scanner.nextInt();
+        
+        System.out.print("Enter a double parameter: ");
+        double param3 = scanner.nextDouble();
+        
+        // Creating an instance of ClassE, which will invoke all constructors in the hierarchy
+        System.out.println("\nCreating an instance of ClassE:");
+        new ClassE(param1, param2, param3);
+        
+        scanner.close();
+    }
+}
+
