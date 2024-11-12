@@ -407,3 +407,75 @@ public class ConstructorChainingExample {
     }
 }
 
+//---------------------------------------------------------12-11-2024-------------------------------------------------------------------
+
+/* 1.create a java application where we need to statisfy super keyword at all three levels.*/	
+
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	int a = sc.nextInt();
+	A(){
+		System.out.println("A");
+	}
+	String m1(boolean b){
+		System.out.println(b);
+		return sc.next();
+	}
+}
+class B extends A{
+	int a = sc.nextInt();
+	B(String str){
+		super();
+		System.out.println(str);
+	}
+	String m1(boolean b){
+		System.out.println(a+" derived class");
+		System.out.println(super.a+" base class");
+		System.out.println("base class"+super.m1(sc.nextBoolean()));
+		return sc.next();
+	}
+	public static void main(String[]args){
+		B obj = new B(sc.next());
+		System.out.println(obj.m1(sc.nextBoolean()));
+	}
+}
+
+/*1.create a java application where we need to satisfy this and super keyword at all three levels.*/
+
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	float ft = sc.nextFloat();
+	
+	A(float ft){
+		System.out.println(ft);
+		System.out.println(this.ft);
+	}
+	A(String str, int n){
+		this(sc.nextFloat());
+		System.out.println(str+" "+n);
+	}
+	double m1(long num){
+		System.out.println(num);
+		return sc.nextDouble();
+	}
+}
+class B extends A{
+	float ft = sc.nextFloat();
+	B(){
+		super(sc.next(),sc.nextInt());
+		System.out.println("B");
+	}
+	double m1(long num){
+		System.out.println(super.m1(sc.nextLong()));
+		System.out.println("A "+super.ft);
+		System.out.println("B "+ft);
+		System.out.println(num);
+		return sc.nextDouble();
+	}
+	public static void main(String[]args){
+		B obj = new B();
+		System.out.println(obj.m1(sc.nextLong()));
+	}
+}
