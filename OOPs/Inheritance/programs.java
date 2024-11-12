@@ -73,7 +73,8 @@ class Employee extends Software{
 //-------------------------------------------06-11-2024-------------------------------------------------------------------------
 
 //-------------------------------------------Multi-level Inheritance----------------------------------------------------------------
-
+//Multilevel Inheritance Example
+//When there is a chain of inheritance, it is known as multilevel inheritance. As you can see in the example given below, BabyDog class inherits the Dog class which again inherits the Animal class, so there is a multilevel inheritance.
 
 /*1.create a java application where we have one class which contains static variable and non-static variable and one non-static method with param and return type then inherit this class into another class , which contains two static varibles and one static method with param and return type then inherit this class into another class which contains two non-static varibles and one static varible non-static method with param and return type then inherit this class into another class which contains non-static and static varible static method with param and return type then access all these properties under main main method by providing dynamic inputs */
 
@@ -171,4 +172,65 @@ class Customer extends Retail{
 		display();
 	}
 }
+
+/* 3. create a java application where we have one class like cvcorp which contains properties like id, name,branch,batch of students then provide four student details then display invidual student details by using methods then invoke all the methods under main method by providing dynamic inputs.  */
+
+import java.util.Scanner;
+
+class CvCorp{
+	static Scanner sc = new Scanner(System.in);
+	int id = sc.nextInt();
+	String name = sc.next();
+	String branch = sc.next();
+	int batch =sc.nextInt();
+}
+class Student1 extends CvCorp{
+	void display(){
+		System.out.println("Student1");
+		System.out.println("id: "+id);
+		System.out.println("name: "+name);
+		System.out.println("branch: "+branch);
+		System.out.println("batch: "+batch);
+	}
+
+}
+class Student2 extends CvCorp{
+	void display(){
+		System.out.println("Student2");
+		System.out.println("id: "+id);
+		System.out.println("name: "+name);
+		System.out.println("branch: "+branch);
+		System.out.println("batch: "+batch);
+	}
+
+}
+class Student3 extends CvCorp{
+	void display(){
+		System.out.println("Student3");
+		System.out.println("id: "+id);
+		System.out.println("name: "+name);
+		System.out.println("branch: "+branch);
+		System.out.println("batch: "+batch);
+	}
+
+}
+class Student4 extends CvCorp{
+	void display(){
+		System.out.println("Student4");
+		System.out.println("id: "+id);
+		System.out.println("name: "+name);
+		System.out.println("branch: "+branch);
+		System.out.println("batch: "+batch);
+	}
+
+}
+public class Students{
+	public static void main(String[]args){
+		new Student1().display();
+		new Student2().display();
+		new Student3().display();
+		new Student4().display();
+	}
+}
+
 
