@@ -479,3 +479,57 @@ class B extends A{
 		System.out.println(obj.m1(sc.nextLong()));
 	}
 }
+
+
+//------------------------------------------------------------------13-11-2024-----------------------------------------------------
+/*1.create a java application where we have one class which contains  non-static methods like m1,m2 and m3 with params and return type. We have another class which contains 3 non-static methods m4,m5and m6 having param and return type. Then invoke m1 under m4, m3 under m5 then m4,m5 under main method by providing dynamic inputs.*/
+
+import java.util.Scanner;
+
+class A {
+    static Scanner sc = new Scanner(System.in); 
+
+    int m1(String str) {
+        System.out.println(str);
+        return sc.nextInt();
+    }
+
+    boolean m2(int n) {
+        System.out.println(n);
+        return sc.nextBoolean();
+    }
+
+    long m3(char ch) {
+        System.out.println(ch);
+        return sc.nextLong();
+    }
+}
+
+class B {
+    String m4(int n) {
+        System.out.println(n);
+        A obj = new A();
+        System.out.println(obj.m1(A.sc.next()));
+        return A.sc.next();
+    }
+
+    float m5(boolean b) {
+        System.out.println(b);
+        A obj = new A();
+        System.out.println(obj.m3(A.sc.next().charAt(0)));
+        return A.sc.nextFloat();
+    }
+
+    char m6(double db) {
+        System.out.println(db);
+        return A.sc.next().charAt(0);
+    }
+
+    public static void main(String[] args) {
+        B obj = new B();
+
+        System.out.println(obj.m4(A.sc.nextInt()));
+        System.out.println(obj.m5(A.sc.nextBoolean()));
+    }
+}
+
