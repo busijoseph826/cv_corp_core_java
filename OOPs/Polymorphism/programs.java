@@ -56,3 +56,61 @@ class ConstructionOverloading{
 	}
 }
 
+/* 3.Create a java application where we need to satisfy method overriding
+by using two classes. */
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	void play(String str){
+		System.out.println(str+" playing cricket");
+	}
+}
+class B extends A{
+	void play(String str){
+		super.play(sc.next());
+		System.out.println(str+" playing tennis");
+	}
+	public static void main(String[]args){
+		B obj = new B();
+		obj.play(sc.next());	
+	}
+	
+}
+/*4. Create a java Application where e need to satisfy method overloading constructor overloading and method overriding by using two classes. */
+
+import java.util.Scanner;
+class A{
+	static Scanner sc = new Scanner(System.in);
+	A(String str){
+		System.out.println(str);
+	}
+	A(int a){
+		this(sc.next());
+		System.out.println(a);
+	}
+	void play(String str){
+		System.out.println(str+" Playing Tennis");
+	}
+	void play(String str,int n){
+		this.play(sc.next());
+		System.out.println(str+" Playing Tennis "+n+" Hours");
+	}
+}
+class B extends A{
+	B(){
+		super(sc.nextInt());
+	}
+	void play(String str){
+		System.out.println(str+" Cricket Playing");
+	}
+	void play(String str,int n){
+		this.play(sc.next());
+		super.play(sc.next(),sc.nextInt());
+		System.out.println(str+" Cricket Tennis "+n+" Hours");
+	}
+	public static void main(String[]args){
+		B obj = new B();
+		obj.play(sc.next(),sc.nextInt());
+	}
+
+}
