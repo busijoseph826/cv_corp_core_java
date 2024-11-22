@@ -76,7 +76,8 @@ class B extends A{
 	}
 	
 }
-/*4. Create a java Application where e need to satisfy method overloading constructor overloading and method overriding by using two classes. */
+
+/* 4.Create a java Application where we need to satisfy method overloading constructor overloading and method overriding by using two classes. */
 
 import java.util.Scanner;
 class A{
@@ -89,11 +90,10 @@ class A{
 		System.out.println(a);
 	}
 	void play(String str){
-		System.out.println(str+" Playing Tennis");
+		System.out.println("class A "+str+" Playing Tennis");
 	}
 	void play(String str,int n){
-		this.play(sc.next());
-		System.out.println(str+" Playing Tennis "+n+" Hours");
+		System.out.println("class A "+str+" Playing Tennis "+n+" Hours");
 	}
 }
 class B extends A{
@@ -101,15 +101,16 @@ class B extends A{
 		super(sc.nextInt());
 	}
 	void play(String str){
-		System.out.println(str+" Cricket Playing");
+		super.play(sc.next());
+		System.out.println("class B "+str+" Cricket Playing");
 	}
 	void play(String str,int n){
-		this.play(sc.next());
 		super.play(sc.next(),sc.nextInt());
-		System.out.println(str+" Cricket Tennis "+n+" Hours");
+		System.out.println("class B "+str+" Cricket Tennis "+n+" Hours");
 	}
 	public static void main(String[]args){
 		B obj = new B();
+		obj.play(sc.next());
 		obj.play(sc.next(),sc.nextInt());
 	}
 
