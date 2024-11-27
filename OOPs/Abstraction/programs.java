@@ -16,7 +16,7 @@ abstract class Play{
 	abstract int play(String str);
 }
 class Cricket extends Play{
-	Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in);
 	int play(String str){
 		System.out.println(str+" playing cricket ");
 		return sc.nextInt();
