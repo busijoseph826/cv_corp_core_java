@@ -73,3 +73,114 @@ class C extends B implements A{
 		obj1.m1(sc.next());	
 	}
 }
+
+
+/* 3.create a java application where we have 3 interfaces with individual abstract and defined methods , we have one abstract class which contains defined and undefined methods double param constructor then inherit all these at a time into one concrete class provide functionality for abstract methods then invoke all the properties under the main method of the separate class.*/
+
+import java.util.Scanner;
+interface I1{
+	static Scanner sc = new Scanner(System.in);
+	int m1(String str);
+	default String m2(int n){
+		System.out.println(n);
+		return sc.next();
+	}
+}
+interface I2{
+	int m3(float ft);
+	default int m4(String str){
+		System.out.println(str);
+		return I1.sc.nextInt();
+	}
+
+}
+interface I3{
+	int m5(char ch);
+	default boolean m6(long ln){
+		System.out.println(ln);
+		return I1.sc.nextBoolean();
+	}
+
+}
+abstract class A{
+	A(int a, int b){
+		System.out.println(a+" "+b);
+	}
+	void play(String str){
+		System.out.println(str+" play Tennis");
+	}
+	abstract void eat(String food);
+}
+class B extends A implements I1,I2,I3{
+	B(){
+		super(sc.nextInt(),sc.nextInt());
+	}
+	public int m1(String str){
+		System.out.println(str);
+		return sc.nextInt();
+	}
+	public int m3(float ft){
+		System.out.println(ft);
+		return sc.nextInt();
+	}
+	public int m5(char ch){
+		System.out.println(ch);
+		return sc.nextInt();
+	}
+	void eat(String food){
+		System.out.println("I love "+food);
+	}
+}
+class C{
+	public static void main(String args[]){
+		B obj = new B();
+		System.out.println(obj.m1(I1.sc.next()));
+		System.out.println(obj.m3(I1.sc.nextFloat()));
+		System.out.println(obj.m5(I1.sc.next().charAt(0)));
+		obj.eat(I1.sc.next());
+		System.out.println(obj.m2(I1.sc.nextInt()));
+		System.out.println(obj.m4(I1.sc.next()));
+		System.out.println(obj.m6(I1.sc.nextLong()));
+		obj.play(I1.sc.next());
+	}
+
+}
+
+/* 4.create a java application where we have one interface which contains one abstract method then inherit this interface into another interface which contains one abstract and defined method, then inherit interface into another interface which contains defined method then inherit this interface into concrete class provide fuctionality for all the abstract method then invoke all the methods under main method by providing dynamic inputs */
+
+import java.util.Scanner;
+
+interface I1{
+	void m1(String str);
+}
+interface I2 extends I1{
+	void m2(String str);
+	default void m3(String str){
+		System.out.println(str);
+	}
+}
+interface I3 extends I2{
+	default void m4(String str){
+		System.out.println(str);
+	}
+}
+class A implements I3{
+	public void m1(String str){
+		System.out.println(str);
+	}
+	public void m2(String str){
+		System.out.println(str);
+	}
+	public void m4(String str){
+		System.out.println(str);
+	}
+	public static void main(String[]args){
+		Scanner sc = new Scanner(System.in);
+		A obj = new A();
+		obj.m1(sc.next());
+		obj.m2(sc.next());
+		obj.m4(sc.next());
+		obj.m3(sc.next());
+	}
+}
+
