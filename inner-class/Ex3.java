@@ -1,0 +1,1 @@
+/*create a java application where we have one class which contains non-static method with param and return type inside this methos we have another class which contains double-param-con, non-static method with param and return type then invoke properties by providing dynamic inputs*/
