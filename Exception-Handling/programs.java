@@ -189,3 +189,35 @@ java.util.InputMismatchException
         at B.main(B.java:18)
 Index 2 out of bounds for length 2
 */
+
+
+/*5. create  a java application where we need to handle checked exception like file not found exception */
+
+import java.io.*;
+class F
+{
+   public static void main(String[] args) throws FileNotFoundException 
+   {
+	FileInputStream fos=new FileInputStream("C:\\Users\\patha\\OneDrive\\Desktop\\Core Java\\Exception Handling\\sample1.txt");
+	System.out.print("done");
+    }
+}
+
+/*create  a java application where we need to handle checked exception like file not found exception by using try catch*/
+
+import java.io.*;
+class G
+{
+   public static void main(String[] args)  
+   {
+	try
+	{
+	FileInputStream fos=new FileInputStream("C:\\Users\\patha\\OneDrive\\Desktop\\Core Java\\Exception Handling\\sample.txt");
+	}
+	catch(FileNotFoundException e)
+	{
+	    System.out.print(e);
+	}
+	System.out.print("done");
+    }
+}
