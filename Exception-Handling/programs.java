@@ -86,3 +86,106 @@ public static void main(String[] args)
     }
 }
 }
+
+
+//4. create a java application where we need to handle multiple exception by using single try and multiple catch blocks.
+
+class D
+{
+  public static void main(String[] args)
+  {
+	try
+	{
+	     System.out.print(10/0);
+	     String s=" ";
+	        System.out.print(s.length());
+	     int a[]=new int[4];
+		System.out.print(a[4]);
+	}
+	catch(ArithmeticException e)
+	{
+	    System.out.println(e);
+	}
+	catch(NullPointerException e)
+	{
+   	    System.out.print(e);
+	}
+	catch(ArrayIndexOutOfBoundsException e)
+	{
+	     System.out.print(e);
+	}
+	catch(Exception e)
+	{
+	    System.out.print(e);
+	}
+	finally
+	{
+	    System.out.println("Final block");
+	}
+  }
+}
+
+/*OUTPUT1:
+java.lang.ArithmeticException: / by zero
+Executed.
+
+output2:
+5
+java.lang.NullPointerException: Cannot invoke "String.length()" because "A.s" is null
+Executed.
+
+Output3:
+5
+java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+Executed.
+*/
+
+
+//create a java application where we need to display exception information  in all three ways
+
+
+import java.util.*;
+class B
+{
+    public static void main(String[] args)
+    {
+	Scanner sc=new Scanner(System.in);
+	try
+	{
+	    System.out.println(10/0);
+	}
+	catch(ArithmeticException e)
+	{
+	    System.out.println(e);
+	}
+	try
+	{
+	    int a=sc.nextInt();
+	}
+	catch(InputMismatchException e)
+	{
+	    e.printStackTrace();
+	}
+	try
+	{
+	    int a[]=new int[2];
+	    System.out.println(a[2]);
+	}
+	catch(ArrayIndexOutOfBoundsException e)
+	{
+	    System.out.println(e.getMessage());
+	}
+    }
+}
+
+/*Output:
+java.lang.ArithmeticException: / by zero
+true
+java.util.InputMismatchException
+        at java.base/java.util.Scanner.throwFor(Scanner.java:947)
+        at java.base/java.util.Scanner.next(Scanner.java:1602)
+        at java.base/java.util.Scanner.nextInt(Scanner.java:2267)
+        at java.base/java.util.Scanner.nextInt(Scanner.java:2221)
+        at B.main(B.java:18)
+Index 2 out of bounds for length 2
+*/
