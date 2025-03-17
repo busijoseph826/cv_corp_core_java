@@ -1,23 +1,37 @@
 /* 1. Create a java Application where we have one class it contains two non-static variables, two static variables and one local variables and display all these variables using a non-static display method having no parameters and return type invoke this method under main method.*/
 
-import java.util.Scanner;
-class Sample1{
+public class VariableDisplay {
+    // Non-static variables
+    int nonStaticVar1 = 10;
+    int nonStaticVar2 = 20;
 
-	static Scanner sc = new Scanner(System.in);
-	String m1(int num){
-		System.out.println(num);
-		return sc.next();
-	}
-	static int m2(double d){
-		System.out.println(d);
-		return sc.nextInt();
-	}
-	public static void main(String[] args){
-		System.out.println(m2(sc.nextDouble()));
-		Sample1 obj = new Sample1();
-		System.out.println(obj.m1(sc.nextInt()));
-	}
+    // Static variables
+    static int staticVar1 = 30;
+    static int staticVar2 = 40;
+
+    // Non-static method to display all variables
+    void displayVariables() {
+        // Local variable
+        int localVar = 50;
+
+        // Displaying all variables
+        System.out.println("Non-static variable 1: " + nonStaticVar1);
+        System.out.println("Non-static variable 2: " + nonStaticVar2);
+        System.out.println("Static variable 1: " + staticVar1);
+        System.out.println("Static variable 2: " + staticVar2);
+        System.out.println("Local variable: " + localVar);
+    }
+
+    // Main method to invoke the display method
+    public static void main(String[] args) {
+        // Creating an instance of the class
+        VariableDisplay obj = new VariableDisplay();
+
+        // Invoking the display method
+        obj.displayVariables();
+    }
 }
+
 
 /* 2. Create a java application where we have one class it contains one non static method m1 having parameter as string and it is going to return int and a static method m2 having paramter as int ans it is going to return Boolean and we have another static method m3 having boolean as parameter and it is going to return string invoke all these methods under main method in a single line.*/
 
